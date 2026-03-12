@@ -10,6 +10,7 @@ let wordList = [];
 let guessSet;
 let wordSet;
 let allowedWords;
+let reset = true;
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -22,6 +23,7 @@ async function init(){
 
     allowedWords = new Set([...wordList, ...guessList]);
     resetFunction();
+    
 };
 
 init();
@@ -34,6 +36,10 @@ const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', resetFunction);
 
 function resetFunction(){
+    if(!reset){
+        reset = confirm("Are you sure you want to reset the game?");
+    }
+    if(!reset) return;
     for(let i = 0; i < outputs.length; i++){
         outputs[i].innerText = '';
         outputs[i].style.backgroundColor = 'transparent';
@@ -46,6 +52,7 @@ function resetFunction(){
     wordarr = word.split('');
     inputs[0].focus()
     test.innerText = ' ';
+    reset = false;
 }
 
 inputs.forEach((input, index) => {
@@ -105,7 +112,7 @@ async function readWordList(){
 
 window.addEventListener('keydown', async (e) => {
 
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && guessNr < 6) {
 
         if(!word) return;
         letters = Array.from(inputs).map(input => input.value).join('');
@@ -155,7 +162,7 @@ async function compareWord(){
 
     checkForWin();
     guessNr++;
-    if(guessNr > 5){
+    if(guessNr > 5 && guess !== word){
         lose();
     }
 }
