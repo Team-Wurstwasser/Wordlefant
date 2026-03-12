@@ -35,6 +35,7 @@ const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', resetFunction);
 
 function resetFunction(){
+    guessNr = 0;
     if(!reset){
         reset = confirm("Are you sure you want to reset the game?");
     }
@@ -45,8 +46,7 @@ function resetFunction(){
     }
     for(let i = 0; i < 5; i++){
         inputs[i].innerText = '';
-    }
-    guessNr = 0;
+    }    
     pickRandomWord();
     wordarr = word.split('');
     inputs[0].focus()
@@ -157,9 +157,9 @@ async function compareWord(){
 
         await delay(250);
     }
-
-    checkForWin();
+    
     guessNr++;
+    checkForWin();
     if(guessNr > 5 && guess !== word){
         lose();
     }
