@@ -146,7 +146,8 @@ body {
     text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 800px) {
     .logo-text { display: none; }
     .header-container { margin-top: 10px; }
+
 }
