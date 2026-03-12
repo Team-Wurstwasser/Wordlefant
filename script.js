@@ -28,7 +28,6 @@ async function init(){
 
 init();
 
-const test = document.getElementById('test');
 const inputs = document.querySelectorAll('.input');
 const outputs = document.querySelectorAll('.ausgabe');
 const resetButton = document.getElementById('reset');
@@ -51,7 +50,6 @@ function resetFunction(){
     pickRandomWord();
     wordarr = word.split('');
     inputs[0].focus()
-    test.innerText = ' ';
     reset = false;
 }
 
@@ -196,10 +194,14 @@ function compareWordLogic(){
 
 function checkForWin(){
     if(word == guess){
-        test.innerText = "You Win!!!";
+        alert("Congratulations! You guessed the word: " + word.toUpperCase());
+        reset = true;
+        resetFunction();
     }
 };
 
 function lose(){
-    test.innerText = "You Lose!!! The Word was: " + word.toUpperCase();
+    alert("You Lose!!! The Word was: " + word.toUpperCase());
+    reset = true;
+    resetFunction();
 };
