@@ -148,4 +148,5 @@ body {
 
 @media (max-width: 400px) {
     .logo-text { display: none; }
+    .header-container { margin-top: 25px; }
 }
