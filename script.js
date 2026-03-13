@@ -142,8 +142,6 @@ function pickRandomWord(){
         wordNr = Math.floor(Math.random() * wordList.length);
         word = wordList[wordNr];
     }while(word.length !== 5);
-
-    console.log("Solution:", word);
 }
 
 async function compareWord(){
