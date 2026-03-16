@@ -51,18 +51,17 @@ bigKeys.forEach(key => {
 
     key.addEventListener("click", () => {
 
-        const value = key.innerText.toLowerCase();
+        const action = key.getAttribute("data-key"); 
 
-        if(value.includes("⏎")){
+        if (action === "enter") {
             submitGuess();
         }
 
-        if(value.includes("⌫")){
+        if (action === "backspace") {
             deleteLetter();
         }
-
+        
     });
-
 });
 
 function typeLetter(letter){
