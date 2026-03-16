@@ -104,6 +104,69 @@ body {
     justify-content: center;
 }
 
+.keyboard-box {
+    width: 300px;
+    height: 160px;
+    background-color: gray;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.keyboard{
+    width: 280px;
+    height: 140px;
+    background-color:rgba(0, 0, 0, 0.67);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.keyboard tr{
+    text-align: center;
+    display: flex;
+    gap: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.key{
+    width: 25px;
+    height: 42px;
+    font-size:large;
+    text-align: center;
+    font-variant: small-caps;
+    font-variant-caps: all-small-caps;
+    font-family: Arial;
+    background-color: dimgray;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.big_key{
+    width: 35px;
+    height: 42px;
+    font-size: large;
+    text-align: center;
+    background-color: dimgray;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
 .game-container {
     display: flex;
