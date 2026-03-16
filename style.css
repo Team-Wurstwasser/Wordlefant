@@ -202,6 +202,15 @@ body {
 
 @media (max-width: 800px) {
     .logo-text { display: none; }
+
     .header-container { margin-top: 10px; }
 
+    .main-area {
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .key {
+        font-size: 14px;
+    }
 }
