@@ -13,6 +13,170 @@ body {
     overflow: hidden;
 }
 
+.anzeige {
+    width: 220px;
+    height: 262px;
+    background-color:rgba(0, 0, 0, 0.67);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.anzeige tr {
+    text-align: center;
+    display: flex;
+    gap: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.anzeige tr td{
+    width: 42px;
+    height: 42px;
+    font-size: xx-large;
+    text-align: center;
+    font-variant: small-caps;
+    font-variant-caps: all-small-caps;
+    font-family: Arial;
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.txtinpt {
+    width: 220px;
+    height: 52px;
+    display: flex; 
+    gap: 0px;
+    background-color: rgba(0, 0, 0, 0.67);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    width: 42px;
+    height: 42px;
+    font-size:xx-large;
+    text-align: center;
+    font-variant: small-caps;
+    font-variant-caps: all-small-caps;
+    font-family: Arial;
+    caret-color: transparent;
+    background-color: dimgray;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 7px;
+}
+
+.input:focus { background-color: gray; border: 2px solid gray; outline: none; }
+
+.reset {
+    width: 220px;
+    height: 52px;
+    background-color: rgba(0, 0, 0, 0.67);
+    border: 1px solid #000000;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: large;
+    font-family: Arial;
+    cursor: pointer;
+    font-size: xx-large;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.reset:active { background-color: dimgray; border: 1px solid #000000; }
+
+.wordle {
+    width: 300px;
+    height: 545px;
+    background-color: gray;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyboard{
+    width: 280px;
+    height: 140px;
+    background-color:rgba(0, 0, 0, 0.67);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.keyboard tr{
+    text-align: center;
+    display: flex;
+    gap: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.key{
+    width: 25px;
+    height: 42px;
+    font-size:large;
+    text-align: center;
+    font-variant: small-caps;
+    font-variant-caps: all-small-caps;
+    font-family: Arial;
+    background-color: dimgray;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.big_key{
+    width: 35px;
+    height: 42px;
+    font-size: large;
+    text-align: center;
+    background-color: dimgray;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.game-container {
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
+.main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 40px;
+    margin-top: 60px;
+}
+
 .header-container {
     padding: 20px 0 0 20px;
     flex-shrink: 0;
@@ -34,162 +198,6 @@ body {
     font-family: 'Latin Modern Mono', monospace;
     color: #000;
     text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-}
-
-.game-container {
-    display: flex;
-    width: 100%;
-    flex: 1;
-}
-
-.main-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    gap: 10px;
-}
-
-.wordle {
-    width: 300px;
-    height: 545px;
-    background-color: gray;
-    border: 2px solid #000000;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.anzeige {
-    width: 220px;
-    height: 262px;
-    background-color: rgba(0, 0, 0, 0.67);
-    border: 1px solid #000000;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.anzeige tr {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.anzeige tr td {
-    width: 42px;
-    height: 42px;
-    font-size: xx-large;
-    text-align: center;
-    font-variant: small-caps;
-    font-variant-caps: all-small-caps;
-    font-family: Arial;
-    color: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 7px;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.txtinpt {
-    width: 220px;
-    height: 52px;
-    display: flex; 
-    background-color: rgba(0, 0, 0, 0.67);
-    border: 1px solid #000000;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.input {
-    width: 42px;
-    height: 42px;
-    font-size: xx-large;
-    text-align: center;
-    font-variant: small-caps;
-    font-variant-caps: all-small-caps;
-    font-family: Arial;
-    caret-color: transparent;
-    background-color: dimgray;
-    color: white;
-    border: 1px solid #000000;
-    border-radius: 7px;
-}
-
-.input:focus { background-color: gray; border: 2px solid gray; outline: none; }
-
-.reset {
-    width: 220px;
-    height: 52px;
-    background-color: rgba(0, 0, 0, 0.67);
-    border: 1px solid #000000;
-    border-radius: 20px;
-    color: #ffffff;
-    font-family: Arial;
-    cursor: pointer;
-    font-size: xx-large;
-    margin-top: 7px;
-    margin-bottom: 7px;
-}
-
-.keyboard {
-    width: 280px;
-    height: 140px;
-    background-color: rgba(0, 0, 0, 0.67);
-    border: 1px solid #000000;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.keyboard tr {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.key {
-    width: 25px;
-    height: 42px;
-    font-size: large;
-    text-align: center;
-    font-variant: small-caps;
-    font-variant-caps: all-small-caps;
-    font-family: Arial;
-    background-color: dimgray;
-    color: white;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.big_key {
-    width: 35px;
-    height: 42px;
-    font-size: large;
-    text-align: center;
-    background-color: dimgray;
-    color: white;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
 }
 
 @media (max-width: 800px) {
