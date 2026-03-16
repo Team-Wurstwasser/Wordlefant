@@ -7,14 +7,14 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     background-color: #f4ecd8;
-    height: 100dvh; 
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
 .header-container {
-    padding: 15px 20px;
+    padding: 20px 0 0 20px;
     flex-shrink: 0;
     z-index: 100;
 }
@@ -26,14 +26,20 @@ body {
     gap: 15px;
 }
 
-.logo { height: 50px; width: auto; }
+.logo { height: 60px; width: auto; }
 
 .logo-text {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     font-family: 'Latin Modern Mono', monospace;
     color: #000;
-    text-shadow: 1px 1px 0 #fff;
+    text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.game-container {
+    display: flex;
+    width: 100%;
+    flex: 1;
 }
 
 .main-area {
@@ -43,18 +49,12 @@ body {
     align-items: center;
     justify-content: center;
     padding: 10px;
-    gap: 10px; 
-}
-
-.game-container {
-    display: flex;
-    width: 100%;
-    height: 100%;
+    gap: 10px;
 }
 
 .wordle {
     width: 300px;
-    max-height: 95%;
+    height: 545px;
     background-color: gray;
     border: 2px solid #000000;
     border-radius: 20px;
@@ -62,100 +62,142 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
 }
 
 .anzeige {
     width: 220px;
-    height: 260px;
+    height: 262px;
     background-color: rgba(0, 0, 0, 0.67);
     border: 1px solid #000000;
     border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.anzeige tr {
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.anzeige tr { display: flex; gap: 2px; margin-bottom: 2px; }
-
 .anzeige tr td {
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
+    width: 42px;
+    height: 42px;
+    font-size: xx-large;
+    text-align: center;
+    font-variant: small-caps;
+    font-variant-caps: all-small-caps;
+    font-family: Arial;
     color: #ffffff;
     border: 1px solid #000000;
-    border-radius: 5px;
+    border-radius: 7px;
+    vertical-align: middle;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-transform: uppercase;
 }
 
 .txtinpt {
     width: 220px;
-    height: 50px;
+    height: 52px;
     display: flex; 
-    gap: 4px;
     background-color: rgba(0, 0, 0, 0.67);
     border: 1px solid #000000;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
-    margin: 5px 0;
 }
 
 .input {
-    width: 38px;
-    height: 38px;
-    font-size: 24px;
+    width: 42px;
+    height: 42px;
+    font-size: xx-large;
     text-align: center;
+    font-variant: small-caps;
+    font-variant-caps: all-small-caps;
+    font-family: Arial;
+    caret-color: transparent;
     background-color: dimgray;
     color: white;
-    border: 1px solid #000;
-    border-radius: 5px;
+    border: 1px solid #000000;
+    border-radius: 7px;
 }
 
-.input:focus { background-color: gray; outline: none; border-color: white; }
+.input:focus { background-color: gray; border: 2px solid gray; outline: none; }
 
 .reset {
     width: 220px;
-    height: 45px;
+    height: 52px;
     background-color: rgba(0, 0, 0, 0.67);
-    border-radius: 15px;
+    border: 1px solid #000000;
+    border-radius: 20px;
     color: #ffffff;
-    font-size: 20px;
+    font-family: Arial;
     cursor: pointer;
-    margin: 5px 0;
+    font-size: xx-large;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 .keyboard {
     width: 280px;
+    height: 140px;
     background-color: rgba(0, 0, 0, 0.67);
+    border: 1px solid #000000;
     border-radius: 10px;
-    padding: 5px;
-}
-
-.keyboard tr { display: flex; justify-content: center; gap: 2px; margin-bottom: 4px; }
-
-.key, .big_key {
-    background-color: dimgray;
-    color: white;
-    border: 1px solid #000;
-    border-radius: 4px;
-    cursor: pointer;
-    display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
 }
 
-.key { width: 25px; height: 35px; font-size: 14px; }
-.big_key { width: 40px; height: 35px; font-size: 14px; }
+.keyboard tr {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.key {
+    width: 25px;
+    height: 42px;
+    font-size: large;
+    text-align: center;
+    font-variant: small-caps;
+    font-variant-caps: all-small-caps;
+    font-family: Arial;
+    background-color: dimgray;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.big_key {
+    width: 35px;
+    height: 42px;
+    font-size: large;
+    text-align: center;
+    background-color: dimgray;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
 @media (max-width: 800px) {
     .logo-text { display: none; }
+    .header-container { padding-top: 10px; }
 }
 
-@media (max-height: 600px) {
-    .wordle { transform: scale(0.85); }
-    .main-area { gap: 2px; }
+@media (max-height: 700px) {
+    .wordle { transform: scale(0.9); }
+    .main-area { gap: 0; }
 }
