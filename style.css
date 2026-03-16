@@ -89,12 +89,14 @@ body {
     font-family: Arial;
     cursor: pointer;
     font-size: xx-large;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 .reset:active { background-color: dimgray; border: 1px solid #000000; }
 
 .wordle {
     width: 300px;
-    height: 442px;
+    height: 545px;
     background-color: gray;
     border: 2px solid #000000;
     border-radius: 20px;
@@ -102,17 +104,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.keyboard-box {
-    width: 300px;
-    height: 160px;
-    background-color: gray;
-    border: 2px solid #000000;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
 }
 
 .keyboard{
