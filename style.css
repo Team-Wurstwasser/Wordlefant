@@ -7,9 +7,8 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     background-color: #f4ecd8;
-    height: 100dvh;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     overflow: hidden;
 }
 
@@ -163,7 +162,7 @@ body {
 .game-container {
     display: flex;
     width: 100%;
-    flex: 1;
+    height: 100%;
 }
 
 .main-area {
@@ -178,8 +177,9 @@ body {
 }
 
 .header-container {
-    padding: 20px 0 0 20px;
-    flex-shrink: 0;
+    position: absolute;
+    top: 20px;
+    left: 20px;
     z-index: 100;
 }
 
@@ -202,10 +202,5 @@ body {
 
 @media (max-width: 800px) {
     .logo-text { display: none; }
-    .header-container { padding-top: 10px; }
-}
-
-@media (max-height: 700px) {
-    .wordle { transform: scale(0.9); }
-    .main-area { gap: 0; }
+    .header-container { margin-top: 10px; }
 }
