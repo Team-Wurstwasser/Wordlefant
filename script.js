@@ -32,6 +32,110 @@ const inputs = document.querySelectorAll('.input');
 const outputs = document.querySelectorAll('.ausgabe');
 const resetButton = document.getElementById('reset');
 
+const keys = document.querySelectorAll(".key, .big_key");
+const letterKeys = document.querySelectorAll(".key");
+const bigKeys = document.querySelectorAll(".big_key");
+
+letterKeys.forEach(key => {
+
+    key.addEventListener("click", () => {
+
+        const letter = key.innerText.toLowerCase();
+        typeLetter(letter);
+
+    });
+
+});
+
+bigKeys.forEach(key => {
+
+    key.addEventListener("click", () => {
+
+        const value = key.innerText.toLowerCase();
+
+        if(value.includes("⏎")){
+            submitGuess();
+        }
+
+        if(value.includes("⌫")){
+            deleteLetter();
+        }
+
+    });
+
+});
+
+function typeLetter(letter){
+
+    for(let i = 0; i < inputs.length; i++){
+
+        if(inputs[i].value === ""){
+            inputs[i].value = letter;
+            if(i < inputs.length - 1){
+                inputs[i+1].focus();
+            }
+            break;
+        }
+
+    }
+
+}
+
+function deleteLetter(){
+
+    for(let i = inputs.length - 1; i >= 0; i--){
+
+        if(inputs[i].value !== ""){
+            inputs[i].value = "";
+            inputs[i].focus();
+            break;
+        }
+
+    }
+
+}
+
+function submitGuess(){
+
+    letters = Array.from(inputs).map(input => input.value).join('');
+
+    if (letters.length === 5 && checkWord()) {
+
+        guess = letters;
+        guessarr = guess.split('');
+
+        compareWord();
+
+        inputs.forEach(input => input.value = '');
+        inputs[0].focus();
+    }
+}
+
+function updateKeyboard(letter, color){
+
+    const key = document.querySelector(`.key[data-key="${letter}"]`);
+    if(!key) return;
+
+    const currentState = key.dataset.state;
+
+    if(currentState === "green") return;
+
+    if(currentState === "orange" && color === "transparent") return;
+
+    if(color === "green"){
+        key.style.backgroundColor = "green";
+        key.dataset.state = "green";
+    }
+    else if(color === "orange"){
+        key.style.backgroundColor = "orange";
+        key.dataset.state = "orange";
+    }
+    else{
+        key.style.backgroundColor = "transparent";
+        key.dataset.state = "transparent";
+    }
+}
+
 resetButton.addEventListener('click', resetFunction);
 
 function resetFunction(){
@@ -44,8 +148,12 @@ function resetFunction(){
         outputs[i].style.backgroundColor = 'transparent';
     }
     for(let i = 0; i < 5; i++){
-        inputs[i].innerText = '';
+        inputs[i].value = '';
     }
+    keys.forEach(key => {
+        key.style.backgroundColor = '';
+        key.dataset.state = '';
+    });
     guessNr = 0;
     pickRandomWord();
     wordarr = word.split('');
@@ -150,8 +258,13 @@ async function compareWord(){
 
     for(let i = 0; i < 5; i++){
 
-        outputs[guessNr*5 + i].innerText = guessarr[i];
-        outputs[guessNr*5 + i].style.backgroundColor = result[i];
+        const letter = guessarr[i];
+        const color = result[i];
+
+        outputs[guessNr*5 + i].innerText = letter;
+        outputs[guessNr*5 + i].style.backgroundColor = color;
+
+        updateKeyboard(letter, color);
 
         await delay(250);
     }
