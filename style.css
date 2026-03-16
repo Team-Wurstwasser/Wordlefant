@@ -13,8 +13,8 @@ body {
 }
 
 .anzeige {
-    width: 220px;
-    height: 262px;
+    width: 260px;
+    height: 310px;
     background-color:rgba(0, 0, 0, 0.67);
     border: 1px solid #000000;
     border-radius: 10px;
@@ -33,8 +33,8 @@ body {
 }
 
 .anzeige tr td{
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
     font-size: xx-large;
     text-align: center;
     font-variant: small-caps;
@@ -50,8 +50,8 @@ body {
 }
 
 .txtinpt {
-    width: 220px;
-    height: 52px;
+    width: 260px;
+    height: 60px;
     display: flex; 
     gap: 0px;
     background-color: rgba(0, 0, 0, 0.67);
@@ -62,8 +62,8 @@ body {
 }
 
 .input {
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
     font-size:xx-large;
     text-align: center;
     font-variant: small-caps;
@@ -80,7 +80,7 @@ body {
 
 .reset {
     width: 220px;
-    height: 52px;
+    height: 50px;
     background-color: rgba(0, 0, 0, 0.67);
     border: 1px solid #000000;
     border-radius: 20px;
@@ -88,15 +88,14 @@ body {
     font-size: large;
     font-family: Arial;
     cursor: pointer;
-    font-size: xx-large;
     margin-top: 7px;
     margin-bottom: 7px;
 }
-.reset:active { background-color: dimgray; border: 1px solid #000000; }
+.reset:hover { background-color: rgba(0, 0, 0, 0.42); border: 1px solid #000000; }
 
 .wordle {
     width: 300px;
-    height: 545px;
+    height: 600px;
     background-color: gray;
     border: 2px solid #000000;
     border-radius: 20px;
@@ -159,6 +158,8 @@ body {
     cursor: pointer;
 }
 
+.key:hover, .big_key:hover { background-color: gray; border: 1px solid #000000; }
+
 .game-container {
     display: flex;
     width: 100%;
@@ -203,4 +204,5 @@ body {
 @media (max-width: 800px) {
     .logo-text { display: none; }
     .header-container { margin-top: 10px; }
+    .logo { height: 40px; width: 40px; }
 }
